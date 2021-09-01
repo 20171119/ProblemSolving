@@ -1,4 +1,4 @@
-#실버2
+#1541번 실버2
 first_list = input().split('-')
 number_list = []
 for first in first_list:

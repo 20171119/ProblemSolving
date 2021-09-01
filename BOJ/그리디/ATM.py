@@ -1,4 +1,4 @@
-# 실버3
+# 11399번 실버3
 num = int(input())
 num_list = list(map(int, input().split()))
 num_list.sort()

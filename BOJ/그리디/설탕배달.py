@@ -1,4 +1,4 @@
-# 브론즈1
+# 2839번 브론즈1
 weight = int(input())
 count = 0
 num5 = weight // 5

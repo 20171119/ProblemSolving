@@ -1,4 +1,4 @@
-#실버2
+# 11047번 실버2
 answer = 0
 n, k = map(int, input().split())
 coin_list = []
