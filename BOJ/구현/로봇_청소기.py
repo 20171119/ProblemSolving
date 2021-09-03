@@ -1,3 +1,4 @@
+#14503번 골드5
 n, m = map(int, input().split())
 r, c, d = map(int, input().split())
 locs = []
