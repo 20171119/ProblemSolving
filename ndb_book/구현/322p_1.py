@@ -1,6 +1,3 @@
-from curses.ascii import isalnum
-
-
 s = list(map(str, input()))
 num_list = [str(i) for i in range(10)]
 chars = []
