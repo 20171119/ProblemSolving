@@ -1,3 +1,4 @@
+# 다시 푼 날짜: 10.8
 def solution(n, lost, reserve):
     # lost 이면서 reserve인 사람 제거 => 차집합 이용
     set_reserve = set(reserve)

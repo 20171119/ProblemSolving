@@ -1,4 +1,4 @@
-# 프로그래머스 / 1단계
+# 다시 푼 날짜: 10.8
 def solution(participant, completion):
     participant.sort()
     completion.sort()

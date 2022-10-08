@@ -1,3 +1,5 @@
+# 다시 푼 날짜: 10.8
+
 from itertools import combinations
 from bisect import bisect_left
 from collections import defaultdict

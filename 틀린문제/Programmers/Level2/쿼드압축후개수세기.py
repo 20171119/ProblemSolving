@@ -1,3 +1,5 @@
+# 다시 푼 날짜: 10.8
+
 def solution(arr):
     answer = [0, 0]
     

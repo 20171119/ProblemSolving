@@ -1,3 +1,5 @@
+# 다시 푼 날짜: 10.8
+
 from collections import deque
 from itertools import permutations
 

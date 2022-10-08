@@ -1,3 +1,5 @@
+# 다시 푼 날짜: 10.8
+
 def solution(X, Y):
     result = []
     for s in list(set(X) & set(Y)):
