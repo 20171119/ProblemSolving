@@ -1,16 +1,14 @@
-import heapq # 파이썬 우선순위 큐
+from heapq import heappush, heappop, heapify
 
 def solution(scoville, K):
     answer = 0
-    heapq.heapify(scoville) # 리스트를 heap으로 변경
-    while scoville[0] < K and len(scoville) >= 2:
-        min1 = heapq.heappop(scoville)
-        min2 = heapq.heappop(scoville)
-        new = min1 + min2 * 2
-        heapq.heappush(scoville, new)
+    heapify(scoville)
+    while len(scoville) > 1 and scoville[0] < K:
+        cur = heappop(scoville)
+        _next = heappop(scoville)
+        result = cur + _next * 2
+        heappush(scoville, result)
         answer += 1
-    
     if scoville[0] < K:
         return -1
-    
     return answer

@@ -1,18 +1,24 @@
-#스택/큐
+from collections import deque
+
 def solution(bridge_length, weight, truck_weights):
     answer = 0
-    bridge = [0 for _ in range(bridge_length)] # bridge 초기 값 0으로 설정
-    bridge_sum = 0 #원래 sum()함수 이용했다가 5번에서 시간초과 되서 변수활용
-    while bridge:
+    truck_in = deque(truck_weights) # 다리 건너기 전 트럭
+    truck_out = deque([]) # 다리를 건넌 트럭
+    bridge = deque([0 for _ in range(bridge_length)]) # 다리에 있는 트럭
+    total = 0 # 다리에 있는 트럭 무게 총 합
+    while len(truck_out) != len(truck_weights):
+        out = bridge.popleft()
+        total -= out
+        if out > 0:
+            truck_out.append(out)
+        
+        if total + truck_in[0] <= weight:
+            truck = truck_in.popleft()
+            truck_in.append(0)
+            bridge.append(truck)
+            total += truck
+        else:
+            bridge.append(0)
+            
         answer += 1
-        out_truck = bridge.pop(0) # bridge를 벗어나는 트럭
-        bridge_sum -= out_truck
-        if truck_weights:
-            if bridge_sum + truck_weights[0] <= weight:
-                in_truck = truck_weights.pop(0) # bridge를 들어오는 트럭
-                bridge_sum += in_truck
-                bridge.append(in_truck)
-            else:
-                bridge.append(0)
-
     return answer

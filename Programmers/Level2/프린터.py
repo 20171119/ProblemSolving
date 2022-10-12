@@ -1,15 +1,16 @@
+from collections import deque
+
 def solution(priorities, location):
     answer = 0
-    idx_p = []
-    for idx in range(len(priorities)):
-        idx_p.append((idx, priorities[idx])) # (idx, val) 값으로 저장
+    q = deque([(val, idx) for idx, val in enumerate(priorities)])
     priorities.sort()
     while True:
-        idx, pri = idx_p.pop(0)
-        if pri == max(priorities):
-            priorities.pop()
+        val, idx = q.popleft()
+        if priorities[-1] == val:
             answer += 1
+            priorities.pop()
             if idx == location:
-                return answer
+                break
         else:
-            idx_p.append((idx, pri))
+            q.append((val, idx))
+    return answer
