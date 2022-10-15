@@ -13,23 +13,20 @@ def solution(k, dungeons):
     return answer
 
 # 백트랙킹
-answer = 0
-n = 0
-visited = []
-def dfs(k, result, dungeons):
-    global answer
-    if result > answer:
-        answer = result
-        
-    for i in range(n):
-        if k >= dungeons[i][0] and not visited[i]:
-            visited[i] = 1
-            dfs(k - dungeons[i][1], result + 1, dungeons)
-            visited[i] = 0
-    
 def solution(k, dungeons):
-    global n, visited, answer
-    n = len(dungeons)
-    visited = [0] * n
-    dfs(k, 0, dungeons)
+    global answer, visited
+    answer = 0
+    visited = [0] * len(dungeons)
+    def dfs(k, result):
+        global answer, visited
+        if result > answer:
+            answer = result
+        
+        for i in range(len(visited)):
+            if k >= dungeons[i][0] and not visited[i]:
+                visited[i] = 1
+                dfs(k - dungeons[i][1], result + 1)
+                visited[i] = 0
+        
+    dfs(k, 0)
     return answer
