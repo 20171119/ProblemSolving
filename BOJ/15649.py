@@ -1,20 +1,19 @@
 # 실버 3 N과 M(1)
-N, M = map(int, input().split())
-visitied = [False] * N
-result = []
-
-
-def get_result(N, M):
-    if len(result) == M:
-        print(" ".join(map(str, result)))
-        return
-    for i in range(N):
-        if not visitied[i]:
-            visitied[i] = True
-            result.append(i + 1)
-            get_result(N, M)
+import sys
+input = sys.stdin.readline
+def dfs(n, m):
+    if len(result) == m:
+        print(' '.join(map(str, result)))
+        return 
+    for i in range(1, n+1):
+        if not visited[i]:
+            visited[i] = True
+            result.append(i)
+            dfs(n, m)
             result.pop()
-            visitied[i] = False
+            visited[i] = False
 
-
-get_result(N, M)
+N, M = map(int, input().split())
+visited = [False] * (N+1)
+result = []
+dfs(N, M)

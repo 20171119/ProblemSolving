@@ -1,4 +1,4 @@
-# 테트로미노 골드5
+# 테트로미노 골드5 - 10/18
 import sys
 input = sys.stdin.readline
 

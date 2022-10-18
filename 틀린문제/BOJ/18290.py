@@ -1,4 +1,5 @@
-# 실버1 NM과 K(1)
+# 실버1 NM과 K(1) - 10/18
+# 완탐했다가 시간초과 난 문제, 백트랙킹을 통해 오른쪽과 아래로만 이동하도록 하기
 def dfs(px, py, count, total):
     global answer
     if count == k:
