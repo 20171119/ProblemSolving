@@ -1,5 +1,4 @@
 # 골드1 외판원 순회
-# 이해를 못하겠음
 n = int(input())
 
 graph = []
@@ -29,4 +28,4 @@ def dfs(x, visited): # (현재 방문 도시, 방문했던 도시 집합)
         dp[x][visited] = min(dp[x][visited], dfs(i, visited | (1 << i)) + graph[x][i])
     return dp[x][visited]
 
-# print(dfs(0, 1))
+print(dfs(0, 1))
